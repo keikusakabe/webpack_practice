@@ -1,0 +1,31 @@
+$primary-color: orenge;
+
+@mixin set-margin($direction, $value) {
+  margin-#{$direction}: $value;
+}
+
+body {
+  color: lightblue;
+}
+
+.content {
+  @include set-margin(right, 16px);
+  .title {
+    font-size: 20px;
+    color: $primary-color;
+  }
+  .title-lg {
+    @extend .title;
+    font-size: 32px;
+  }
+  .title-md {
+    @extend .title;
+    font-size: 28px;
+  }
+  .title-sm {
+    @extend .title;
+    font-size: 14px;
+  }
+}
+
+@import './footer.scss';
